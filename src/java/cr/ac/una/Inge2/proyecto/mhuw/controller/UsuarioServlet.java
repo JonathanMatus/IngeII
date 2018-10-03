@@ -97,20 +97,31 @@ public class UsuarioServlet extends HttpServlet {
                     }
 
                     break;
-                     case "login":
-                        List<Usuario> lista=ubl.findByQuery("FROM Usuario where UK_EMAIL='"+request.getParameter("correo")+"'");
-                        if (ubl.findByNombreUsuario(request.getParameter("usuario")) != null ) { //Si el usuario existe
-                             if(ubl.findByClaveNombreUsuario(request.getParameter("usuario"), request.getParameter("clave"))!=null)
-                             {     request.getSession(true);  
-                                 out.print("C~ Correcto"); 
-                               session.setAttribute("usuario", null); 
-                                  session.setAttribute("loginStatus", "login"); 
-                                  session.setAttribute("tipo", " "); }
-                             else{    
-                                 out.print("F~ error, el usuario o clave no existe"); }  }
-                         else{
-                              out.print("F~ error, el usuario no existe"); }
- 
+                case "login":
+                    List<Usuario> lista = ubl.findByQuery("FROM Usuario where UK_EMAIL='" + request.getParameter("correo") + "'");
+                    if (lista.size() > 0) { //Si el usuario existe
+                        String sha512 = request.getParameter("sha512pass");
+                        if (lista.get(0).getPasswordSha512().equals(sha512)) {
+                            String hash = lista.get(0).getPasswordBcrypt();
+                            if (BCrypt.checkpw(sha512, hash)) {
+                                Usuario userAux = lista.get(0);
+                            } else {
+                                out.print("E~Usuario o contraseña incorrectos");
+                            }
+
+                            request.getSession(true);
+
+                            session.setAttribute("usuario", null);
+                            session.setAttribute("loginStatus", "login");
+                            session.setAttribute("tipo", " ");
+                            out.print("C~ Correcto");
+                        } else {
+                            out.print("F~ error, el usuario o clave no existe");
+                        }
+                    } else {
+                        out.print("F~ error, el usuario no existe");
+                    }
+
                     break;
                 case "testPassword":
                     String sha512 = request.getParameter("sha512pass");
