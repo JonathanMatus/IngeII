@@ -15,9 +15,12 @@
         <!--        bootstrap library-->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
         <link href="css/prototipo.css" rel="stylesheet" type="text/css"/>
         <link href="css/inicio.css" rel="stylesheet" type="text/css"/>
         <link href="css/principal.css" rel="stylesheet" type="text/css"/>
+        <link href="css/style.css" rel="stylesheet" type="text/css"/>
 
     </head>
     <body>
@@ -65,39 +68,84 @@
                     <h4>Articulos recientes</h4>
 
                 </div>
-                <div id="articulosIndex">
-                    <div id="articuloFormat">
-                        <h6>Titulo Prueba</h6><span id="autor">Autor: Jose Sanchez </span><span id="fecha">Fecha:16/09/2018</span>
+                
+                 <div id="myCarousel" class="carousel slide" data-ride="carousel">
+                    <!-- Indicators--> 
+                    <ol class="carousel-indicators">
+                        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                        <li data-target="#myCarousel" data-slide-to="1"></li>
+                        <li data-target="#myCarousel" data-slide-to="2"></li>
+                        <li data-target="#myCarousel" data-slide-to="3"></li>
+                        <li data-target="#myCarousel" data-slide-to="4"></li>
+
+                    </ol>
+
+                    <!-- Wrapper for slides--> 
+                    <div class="carousel-inner">
+                        <div class="item active" data-toggle="modal" data-target="#add-modal">
+                            <div id="articuloFormat">
+                        <h6>Titulo Prueba</h6><span id="autor">Autor: A </span><span id="fecha">Fecha:16/09/2018</span>
                         <p>Datos de prueba Datos de prueba Datos de prueba Datos de prueba Datos de prueba
                             Datos de pruebaDatos de prueba Datos de prueba Datos de prueba Datos de prueba Datos de prueba
                             Datos de prueba Datos de prueba Datos de prueba Datos de prueba Datos de prueba Datos de prueba...
                         </p>
                         <a href="#">Seguir Leyendo</a>
                     </div>
-                    <div id="articuloFormat">
-                        <h6>Titulo Prueba</h6><span id="autor">Autor: Jose Sanchez </span><span id="fecha">Fecha:16/09/2018</span>
+                        </div>
+
+                        <div class="item" data-toggle="modal" data-target="#add-modal">
+                            <div id="articuloFormat">
+                        <h6>Titulo Prueba</h6><span id="autor">Autor: B </span><span id="fecha">Fecha:16/09/2018</span>
                         <p>Datos de prueba Datos de prueba Datos de prueba Datos de prueba Datos de prueba
                             Datos de pruebaDatos de prueba Datos de prueba Datos de prueba Datos de prueba Datos de prueba
                             Datos de prueba Datos de prueba Datos de prueba Datos de prueba Datos de prueba Datos de prueba...
                         </p>
                         <a href="#">Seguir Leyendo</a>
                     </div>
-                    <div id="articuloFormat">
-                        <h6>Titulo Prueba</h6><span id="autor">Autor: Jose Sanchez </span><span id="fecha">Fecha:16/09/2018</span>
+                        </div>
+
+                        <div class="item" data-toggle="modal" data-target="#add-modal">
+                            <div id="articuloFormat">
+                        <h6>Titulo Prueba</h6><span id="autor">Autor: C </span><span id="fecha">Fecha:16/09/2018</span>
                         <p>Datos de prueba Datos de prueba Datos de prueba Datos de prueba Datos de prueba
                             Datos de pruebaDatos de prueba Datos de prueba Datos de prueba Datos de prueba Datos de prueba
                             Datos de prueba Datos de prueba Datos de prueba Datos de prueba Datos de prueba Datos de prueba...
                         </p>
                         <a href="#">Seguir Leyendo</a>
                     </div>
-                    <div id="articuloFormat">
-                        <h6>Titulo Prueba</h6><span id="autor">Autor: Jose Sanchez </span><span id="fecha">Fecha:16/09/2018</span>
+                        </div>
+
+                        <div class="item" data-toggle="modal" data-target="#add-modal">
+                            <div id="articuloFormat">
+                        <h6>Titulo Prueba</h6><span id="autor">Autor: D </span><span id="fecha">Fecha:16/09/2018</span>
                         <p>Datos de prueba Datos de prueba Datos de prueba Datos de prueba Datos de prueba
                             Datos de pruebaDatos de prueba Datos de prueba Datos de prueba Datos de prueba Datos de prueba
                             Datos de prueba Datos de prueba Datos de prueba Datos de prueba Datos de prueba Datos de prueba...
                         </p>
                         <a href="#">Seguir Leyendo</a>
                     </div>
+                        </div>
+
+                        <div class="item" data-toggle="modal" data-target="#add-modal">
+                            <div id="articuloFormat">
+                        <h6>Titulo Prueba</h6><span id="autor">Autor: E </span><span id="fecha">Fecha:16/09/2018</span>
+                        <p>Datos de prueba Datos de prueba Datos de prueba Datos de prueba Datos de prueba
+                            Datos de pruebaDatos de prueba Datos de prueba Datos de prueba Datos de prueba Datos de prueba
+                            Datos de prueba Datos de prueba Datos de prueba Datos de prueba Datos de prueba Datos de prueba...
+                        </p>
+                        <a href="#">Seguir Leyendo</a>
+                    </div>
+                        </div>
+                    </div>
+
+                    <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+                        <span class="glyphicon glyphicon-chevron-left"></span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="right carousel-control" href="#myCarousel" data-slide="next">
+                        <span class="glyphicon glyphicon-chevron-right"></span>
+                        <span class="sr-only">Next</span>
+                    </a>
                 </div>
 
 
@@ -123,5 +171,6 @@
                 </div>
             </div>
         </div>
+        
     </body>
 </html>
