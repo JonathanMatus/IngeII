@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 01-oct-2018 22:04:15 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="cr.ac.una.Inge2.proyecto.mhuw.domain.Direccion" table="direccion" catalog="mydbinge" optimistic-lock="version">
+        <id name="idDireccion" type="java.lang.Integer">
+            <column name="idDireccion" />
+            <generator class="identity" />
+        </id>
+        <property name="provincia" type="string">
+            <column name="Provincia" length="25" not-null="true" />
+        </property>
+        <property name="canton" type="string">
+            <column name="Canton" length="25" not-null="true" />
+        </property>
+        <property name="distrito" type="string">
+            <column name="Distrito" length="30" not-null="true" />
+        </property>
+        <property name="tipo" type="string">
+            <column name="tipo" length="9" not-null="true" />
+        </property>
+        <property name="otrasSenas" type="string">
+            <column name="OtrasSenas" />
+        </property>
+        <set name="estudiantes" table="estudiante" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="Direccion" not-null="true" />
+            </key>
+            <one-to-many class="cr.ac.una.Inge2.proyecto.mhuw.domain.Estudiante" />
+        </set>
+    </class>
+</hibernate-mapping>

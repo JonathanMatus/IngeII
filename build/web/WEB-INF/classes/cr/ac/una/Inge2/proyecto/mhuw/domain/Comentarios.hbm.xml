@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 01-oct-2018 22:04:15 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="cr.ac.una.Inge2.proyecto.mhuw.domain.Comentarios" table="comentarios" catalog="mydbinge" optimistic-lock="version">
+        <id name="idComentarios" type="java.lang.Integer">
+            <column name="idComentarios" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="estudiante" class="cr.ac.una.Inge2.proyecto.mhuw.domain.Estudiante" fetch="select">
+            <column name="Fk_idEstudiante" not-null="true" />
+        </many-to-one>
+        <many-to-one name="usuario" class="cr.ac.una.Inge2.proyecto.mhuw.domain.Usuario" fetch="select">
+            <column name="Fk_idUsuario" not-null="true" />
+        </many-to-one>
+        <property name="descripcion" type="string">
+            <column name="Descripcion" not-null="true" />
+        </property>
+        <property name="ultimoUsuario" type="java.lang.Integer">
+            <column name="Ultimo_Usuario" />
+        </property>
+        <property name="fechaModificacion" type="date">
+            <column name="Fecha_Modificacion" length="10" />
+        </property>
+    </class>
+</hibernate-mapping>

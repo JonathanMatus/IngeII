@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 01-oct-2018 22:04:15 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="cr.ac.una.Inge2.proyecto.mhuw.domain.Grupo" table="grupo" catalog="mydbinge" optimistic-lock="version">
+        <id name="idGrupo" type="int">
+            <column name="idGrupo" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="funcionario" class="cr.ac.una.Inge2.proyecto.mhuw.domain.Funcionario" fetch="select">
+            <column name="Fk_Funcionario" not-null="true" />
+        </many-to-one>
+        <property name="nrc" type="int">
+            <column name="NRC" not-null="true" />
+        </property>
+        <property name="nombre" type="string">
+            <column name="Nombre" length="45" not-null="true" />
+        </property>
+        <property name="numero" type="int">
+            <column name="Numero" not-null="true" />
+        </property>
+        <property name="ultimoUsuario" type="java.lang.Integer">
+            <column name="Ultimo_Usuario" />
+        </property>
+        <property name="fechaModificacion" type="date">
+            <column name="Fecha_Modificacion" length="10" />
+        </property>
+    </class>
+</hibernate-mapping>

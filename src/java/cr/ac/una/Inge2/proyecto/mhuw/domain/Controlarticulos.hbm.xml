@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 01-oct-2018 22:04:15 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="cr.ac.una.Inge2.proyecto.mhuw.domain.Controlarticulos" table="controlarticulos" catalog="mydbinge" optimistic-lock="version">
+        <id name="pkIdArticulo" type="java.lang.Integer">
+            <column name="Pk_IdArticulo" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="usuario" class="cr.ac.una.Inge2.proyecto.mhuw.domain.Usuario" fetch="select">
+            <column name="FK_IdUsuario" not-null="true" />
+        </many-to-one>
+        <property name="titulo" type="string">
+            <column name="Titulo" length="45" not-null="true" />
+        </property>
+        <property name="descripcion" type="string">
+            <column name="Descripcion" length="65535" not-null="true" />
+        </property>
+        <property name="autor" type="string">
+            <column name="Autor" length="60" not-null="true" />
+        </property>
+        <property name="fechaPublicacion" type="date">
+            <column name="Fecha_Publicacion" length="10" not-null="true" />
+        </property>
+        <property name="enlace" type="string">
+            <column name="Enlace" not-null="true" />
+        </property>
+        <property name="enlaceDrive" type="string">
+            <column name="Enlace_Drive" />
+        </property>
+        <property name="fechaModificacion" type="date">
+            <column name="Fecha_Modificacion" length="10" />
+        </property>
+        <property name="ultimoUsuario" type="java.lang.Integer">
+            <column name="Ultimo_Usuario" />
+        </property>
+    </class>
+</hibernate-mapping>

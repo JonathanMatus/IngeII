@@ -1,0 +1,88 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 05-sep-2018, 12:10:10
+    Author     : patei
+*/
+#banner{
+    height: 90px;
+}
+html,
+body {
+    margin:0;
+    padding:0;
+    height:100%;
+    min-height:100%;
+    background:#494949;
+}
+#container {
+    min-height:100%;
+    position:relative;
+    background:#494949;
+    height:100%;
+}
+#header {
+    background-color:#c00000;
+
+    height: auto;
+}
+.logo-una,.linea-gris,.logo-ciemhcavi,.nombre-entidad,.abreviatura-entidad{
+    position: absolute;
+}
+
+.logo-una{
+    margin-left: 50px;
+}
+.logo-ciemhcavi{
+    margin-left: 170px;
+    width: 200px;
+}
+.nombre-entidad{
+    margin-left: 280px;
+    margin-top: 20px;
+    width: 300px;
+    font-size: 14px;
+    color: white;
+    font-family:Arial,sans-serif;
+    font-weight:bold;
+
+}
+.abreviatura-entidad{
+    font-size: 24px;
+    margin-left: 600px;
+    margin-top: 20px;
+    color: white;
+   font-family: 'K2D', sans-serif;
+   font-weight:bold;
+}
+.linea-gris{
+    margin-left: 250px;
+    width: 200px;
+}
+#body {
+    padding:0;
+    background-color: #fff;
+    width: 80%;
+    height : auto;
+    margin: auto;
+    position: relative;
+    min-height:80%;
+}
+#footer {
+    width:80%;
+    height:auto;  
+    background:#151618;
+    color:#656667;
+    font-size: 12px;
+    clear: both;
+    position: relative;
+    padding-bottom:  10px;
+    margin: auto;
+}
+a{color:#c33;text-decoration:none;}
+a:hover,a:active,a:focus{color:#333;}
+.copyright{color:#a5a6a7;}
+#footer .copyright a:hover,#footer .copyright a:focus{color:#fff;}

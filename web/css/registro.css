@@ -1,0 +1,32 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 05-sep-2018, 13:43:40
+    Author     : patei
+*/
+
+#titulo{
+    border-bottom: 1px solid black;
+}
+#body>h1{
+    font-family: 'Arial';
+
+}
+.focusedInput {
+    border-color: rgba(82,168,236,.8);
+    outline: 0;
+    outline: thin dotted \9;
+    -moz-box-shadow: 0 0 8px rgba(82,168,236,.6);
+    box-shadow: 0 0 8px rgba(82,168,236,.6) !important;
+}
+#mostrarPassword{
+    margin-top: 8px;
+    
+}
+#mostrarPassword>a{
+   color: black;
+    
+}

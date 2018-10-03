@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 01-oct-2018 22:04:15 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="cr.ac.una.Inge2.proyecto.mhuw.domain.Controlchats" table="controlchats" catalog="mydbinge" optimistic-lock="version">
+        <id name="pkIdControlChats" type="java.lang.Integer">
+            <column name="PK_IdControlChats" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="usuarioByFkIdUsuarioOrigen" class="cr.ac.una.Inge2.proyecto.mhuw.domain.Usuario" fetch="select">
+            <column name="FK_IdUsuarioOrigen" not-null="true" />
+        </many-to-one>
+        <many-to-one name="usuarioByFkIdUsuarioDestino" class="cr.ac.una.Inge2.proyecto.mhuw.domain.Usuario" fetch="select">
+            <column name="FK_IdUsuarioDestino" not-null="true" />
+        </many-to-one>
+        <property name="mensaje" type="string">
+            <column name="Mensaje" length="65535" not-null="true" />
+        </property>
+        <property name="asunto" type="string">
+            <column name="Asunto" length="45" not-null="true" />
+        </property>
+        <property name="fechaEnvio" type="timestamp">
+            <column name="FechaEnvio" length="19" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

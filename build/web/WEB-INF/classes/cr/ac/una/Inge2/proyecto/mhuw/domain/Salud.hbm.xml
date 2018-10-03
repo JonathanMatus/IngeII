@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 01-oct-2018 22:04:15 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="cr.ac.una.Inge2.proyecto.mhuw.domain.Salud" table="salud" catalog="mydbinge" optimistic-lock="version">
+        <id name="idSalud" type="int">
+            <column name="idSalud" />
+            <generator class="assigned" />
+        </id>
+        <property name="enfermedades" type="string">
+            <column name="Enfermedades" />
+        </property>
+        <property name="alergias" type="string">
+            <column name="Alergias" />
+        </property>
+        <property name="lesiones" type="string">
+            <column name="Lesiones" />
+        </property>
+        <property name="necesidadEspecial" type="string">
+            <column name="NecesidadEspecial" />
+        </property>
+        <property name="tipoSangre" type="string">
+            <column name="TipoSangre" length="2" />
+        </property>
+        <property name="ultimoUsuario" type="java.lang.Integer">
+            <column name="Ultimo_Usuario" />
+        </property>
+        <property name="fechaModificacion" type="date">
+            <column name="Fecha_Modificacion" length="10" />
+        </property>
+        <set name="estudiantes" table="estudiante" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="InfoSalud" />
+            </key>
+            <one-to-many class="cr.ac.una.Inge2.proyecto.mhuw.domain.Estudiante" />
+        </set>
+    </class>
+</hibernate-mapping>

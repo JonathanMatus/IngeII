@@ -1,0 +1,62 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 16-sep-2018, 19:29:44
+    Author     : patei
+*/
+h3{
+    font-family:Georgia,"Times New Roman",Times,serif;
+
+    font-weight:normal;
+
+}
+#body{
+
+}
+#regresar{
+    margin: auto;
+    text-align: center;
+}
+#contenido{ 
+    padding: 100px;
+}
+#mensaje{
+    height: auto;
+    color:#298A08;
+    margin: auto;
+    padding-top: 8px;
+    text-align: left;
+}
+#msjCuenta{
+    border-left: 4px solid #a4b357;
+
+    height: 45px;
+    background: #ffffff;
+    background: -moz-linear-gradient(left, #ffffff 0%, #e0f0d1 0%, #e0f0d1 100%);
+    background: -webkit-gradient(left top, right top, color-stop(0%, #ffffff), color-stop(0%, #e0f0d1), color-stop(100%, #e0f0d1));
+    background: -webkit-linear-gradient(left, #ffffff 0%, #e0f0d1 0%, #e0f0d1 100%);
+    background: -o-linear-gradient(left, #ffffff 0%, #e0f0d1 0%, #e0f0d1 100%);
+    background: -ms-linear-gradient(left, #ffffff 0%, #e0f0d1 0%, #e0f0d1 100%);
+    background: linear-gradient(to right, #ffffff 0%, #e0f0d1 0%, #e0f0d1 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#e0f0d1', GradientType=1 );
+}
+#NavegacionSegundaria{
+    height: auto;
+    background: #F2F2F2;
+    color: #585858;
+}
+#paginacionNav1 > a{
+    color: #6E6E6E;
+}
+#paginacionNav1 > h6{
+    color: #BDBDBD;
+}
+#mensaje > span{
+    margin-top: 5px;
+    color:#848484;
+    font-weight:  lighter;
+    padding-top: 5px;
+}

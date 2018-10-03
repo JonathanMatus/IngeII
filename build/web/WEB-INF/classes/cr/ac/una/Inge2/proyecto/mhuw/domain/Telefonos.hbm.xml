@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 01-oct-2018 22:04:15 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="cr.ac.una.Inge2.proyecto.mhuw.domain.Telefonos" table="telefonos" catalog="mydbinge" optimistic-lock="version">
+        <id name="idTelefonos" type="int">
+            <column name="idTelefonos" />
+            <generator class="assigned" />
+        </id>
+        <property name="habitacion" type="string">
+            <column name="Habitacion" length="8" />
+        </property>
+        <property name="celular" type="string">
+            <column name="Celular" length="8" />
+        </property>
+        <property name="trabajo" type="string">
+            <column name="Trabajo" length="8" />
+        </property>
+        <set name="funcionarios" table="funcionario" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="Telefono" not-null="true" />
+            </key>
+            <one-to-many class="cr.ac.una.Inge2.proyecto.mhuw.domain.Funcionario" />
+        </set>
+        <set name="estudiantes" table="estudiante" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="Telefono" not-null="true" />
+            </key>
+            <one-to-many class="cr.ac.una.Inge2.proyecto.mhuw.domain.Estudiante" />
+        </set>
+    </class>
+</hibernate-mapping>
