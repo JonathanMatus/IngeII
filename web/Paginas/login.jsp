@@ -26,7 +26,7 @@
         <script src="../js/Api/bcrypt.min.js" type="text/javascript"></script>
         <script src="../js/Login.js" type="text/javascript"></script>
         <script src="../js/verificarCampos.js" type="text/javascript"></script>
-
+        <script src="../js/password.js" type="text/javascript"></script>
         <!-- Archivos css -->
         <link href="../css/prototipo.css" rel="stylesheet" type="text/css"/>
         <link href="../css/registro.css" rel="stylesheet" type="text/css"/>

@@ -102,7 +102,8 @@ public class UsuarioServlet extends HttpServlet {
 
                     break;
                 case "login":
-                    List<Usuario> lista = ubl.findByQuery("FROM Usuario where UK_EMAIL='" + request.getParameter("correo") + "'");
+                    String correo=request.getParameter("usuario");
+                    List<Usuario> lista = ubl.findByQuery("FROM Usuario where UK_EMAIL='" + request.getParameter("usuario") + "'");
                     if (lista.size() > 0) { //Si el usuario existe
                         String sha512 = request.getParameter("sha512pass");
                         if (lista.get(0).getPasswordSha512().equals(sha512)) {
@@ -114,6 +115,7 @@ public class UsuarioServlet extends HttpServlet {
                                     request.getSession(true);
                                     session.setAttribute("usuario", userAux.getUsuario());
                                     session.setAttribute("tipo", userAux.getTipo());
+                                    session.setAttribute("loginStatus", "login");
                                     out.print("C~ Correcto");
                                 } else {
                                     out.print("E~Usuario o contraseña incorrectos");

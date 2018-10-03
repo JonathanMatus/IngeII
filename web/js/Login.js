@@ -43,7 +43,7 @@ function iniciarSesion() {
                     swal("Ingresando...", respuestaTxt, "success");
                     //se redirecciona en JavaScript
                     setTimeout(function () {
-                        window.location = "SesionCliente.jsp";
+                        window.location = "../Prototipo.jsp";
                     }, 2000);
                 } else {       
                     if (tipoRespuesta === "E~") {

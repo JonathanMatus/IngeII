@@ -5,25 +5,14 @@
  */
 function test() {
     var bcrypt = dcodeIO.bcrypt;
-    var pass = "contraseña";
+    var pass = "CIEMHCAVI2018";
     var sha512pass = sha512(pass);
+    console.log(sha512pass);
+    if("7be6c43cc95d65b388332655226fb48cf13b5cdbf4c3a6b58b44748e788c9f648c5c5c329625b4fc31f7cac0a663902bcbbda3e90cd3c57987a7382a716313bf" == sha512pass)
+          console.log(true);
     bcrypt.genSalt(10, function (err, salt) {
         bcrypt.hash(sha512pass, salt, function (err, hash) {
-            $.ajax({
-                url: 'UsuarioServlet',
-                data: {
-                    accion: "testPassword",
-                    sha512pass: sha512pass,
-                    hash: hash
-                },
-                error: function () { //si existe un error en la respuesta del ajax
-                   alert("Error!", "Se genero un error, contacte al administrador (Error del ajax)", "error");
-                },
-                success: function (data) { //si todo esta correcto en la respuesta del ajax, la respuesta queda en el data
-
-                },
-                type: 'POST'
-            });
+           
         });
 
     });
