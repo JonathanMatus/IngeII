@@ -90,7 +90,7 @@ function enviar() {
                         usuario: $("#usuario").val(),
                         cedula: $("#cedula").val(),
                         nombre: $("#nombre").val(),
-                        telefono: $("#telefono").val(),
+                        telefono: $("#celular").val(),
                         apellidos: $("#apellidos").val(),
                         nacionalidad: $("#nacionalidad option:selected").text(),
                         correo: $("#correo").val(),
@@ -165,7 +165,7 @@ function validar() {
         $("#apellidos").addClass("is-valid");
 
     }
-    if (!validateTelephone("telefono")) {
+    if (!validateTelephone("celular")) {
         $("#telefonoHelpBlock").show();
 
         validacion = false;

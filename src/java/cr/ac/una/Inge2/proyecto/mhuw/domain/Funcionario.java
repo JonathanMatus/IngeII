@@ -1,5 +1,5 @@
 package cr.ac.una.Inge2.proyecto.mhuw.domain;
-// Generated 01-oct-2018 22:04:13 by Hibernate Tools 4.3.1
+// Generated 02-oct-2018 22:06:36 by Hibernate Tools 4.3.1
 
 
 import java.util.Date;

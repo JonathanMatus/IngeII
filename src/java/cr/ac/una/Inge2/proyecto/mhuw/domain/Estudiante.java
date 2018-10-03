@@ -1,5 +1,5 @@
 package cr.ac.una.Inge2.proyecto.mhuw.domain;
-// Generated 01-oct-2018 22:04:13 by Hibernate Tools 4.3.1
+// Generated 02-oct-2018 22:06:36 by Hibernate Tools 4.3.1
 
 
 import java.util.Date;
@@ -36,21 +36,13 @@ public class Estudiante  implements java.io.Serializable {
     }
 
 	
-    public Estudiante(Direccion direccion, Telefonos telefonos, Usuario usuario, String cedula, String nombre, String apellidos, String nacionalidad, String carrera, String codigoCarrera, String numeroCarnet, String fechaNacimiento, String lugarNacimiento, String personaEmergencia, String telefonoEmergencia) {
-        this.direccion = direccion;
+    public Estudiante(Telefonos telefonos, Usuario usuario, String cedula, String nombre, String apellidos, String nacionalidad) {
         this.telefonos = telefonos;
         this.usuario = usuario;
         this.cedula = cedula;
         this.nombre = nombre;
         this.apellidos = apellidos;
         this.nacionalidad = nacionalidad;
-        this.carrera = carrera;
-        this.codigoCarrera = codigoCarrera;
-        this.numeroCarnet = numeroCarnet;
-        this.fechaNacimiento = fechaNacimiento;
-        this.lugarNacimiento = lugarNacimiento;
-        this.personaEmergencia = personaEmergencia;
-        this.telefonoEmergencia = telefonoEmergencia;
     }
     public Estudiante(Direccion direccion, Salud salud, Telefonos telefonos, Usuario usuario, String cedula, String nombre, String apellidos, String nacionalidad, String carrera, String codigoCarrera, String numeroCarnet, String fechaNacimiento, String lugarNacimiento, String personaEmergencia, String telefonoEmergencia, Integer ultimoUsuario, Date fechaModificacion, Set<Comentarios> comentarioses) {
        this.direccion = direccion;

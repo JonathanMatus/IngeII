@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
-<!-- Generated 01-oct-2018 22:04:15 by Hibernate Tools 4.3.1 -->
+<!-- Generated 02-oct-2018 22:06:37 by Hibernate Tools 4.3.1 -->
 <hibernate-mapping>
     <class name="cr.ac.una.Inge2.proyecto.mhuw.domain.Estudiante" table="estudiante" catalog="mydbinge" optimistic-lock="version">
         <id name="pkIdEstudiante" type="java.lang.Integer">
@@ -9,7 +9,7 @@
             <generator class="identity" />
         </id>
         <many-to-one name="direccion" class="cr.ac.una.Inge2.proyecto.mhuw.domain.Direccion" fetch="select">
-            <column name="Direccion" not-null="true" />
+            <column name="Direccion" />
         </many-to-one>
         <many-to-one name="salud" class="cr.ac.una.Inge2.proyecto.mhuw.domain.Salud" fetch="select">
             <column name="InfoSalud" />
@@ -33,25 +33,25 @@
             <column name="Nacionalidad" length="30" not-null="true" />
         </property>
         <property name="carrera" type="string">
-            <column name="Carrera" length="45" not-null="true" />
+            <column name="Carrera" length="45" />
         </property>
         <property name="codigoCarrera" type="string">
-            <column name="CodigoCarrera" length="45" not-null="true" />
+            <column name="CodigoCarrera" length="45" />
         </property>
         <property name="numeroCarnet" type="string">
-            <column name="NumeroCarnet" length="45" not-null="true" />
+            <column name="NumeroCarnet" length="45" />
         </property>
         <property name="fechaNacimiento" type="string">
-            <column name="FechaNacimiento" length="45" not-null="true" />
+            <column name="FechaNacimiento" length="45" />
         </property>
         <property name="lugarNacimiento" type="string">
-            <column name="LugarNacimiento" length="45" not-null="true" />
+            <column name="LugarNacimiento" length="45" />
         </property>
         <property name="personaEmergencia" type="string">
-            <column name="PersonaEmergencia" length="45" not-null="true" />
+            <column name="PersonaEmergencia" length="45" />
         </property>
         <property name="telefonoEmergencia" type="string">
-            <column name="TelefonoEmergencia" length="8" not-null="true" />
+            <column name="TelefonoEmergencia" length="8" />
         </property>
         <property name="ultimoUsuario" type="java.lang.Integer">
             <column name="Ultimo_Usuario" />
