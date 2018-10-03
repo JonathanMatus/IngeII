@@ -6,8 +6,10 @@
 package cr.ac.una.Inge2.proyecto.mhuw.controller;
 
 import cr.ac.una.Inge2.proyecto.mhuw.bl.impl.EstudianteBL;
+import cr.ac.una.Inge2.proyecto.mhuw.bl.impl.TelefonosBL;
 import cr.ac.una.Inge2.proyecto.mhuw.bl.impl.UsuarioBL;
 import cr.ac.una.Inge2.proyecto.mhuw.domain.Estudiante;
+import cr.ac.una.Inge2.proyecto.mhuw.domain.Telefonos;
 import cr.ac.una.Inge2.proyecto.mhuw.domain.Usuario;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -49,6 +51,8 @@ public class UsuarioServlet extends HttpServlet {
             UsuarioBL ubl = new UsuarioBL();
             Estudiante clienteAux = new Estudiante();
             EstudianteBL cbl = new EstudianteBL();
+            Telefonos tel = new Telefonos();
+            TelefonosBL telbl = new TelefonosBL();
             //Se hace una pausa para ver el modal
             Thread.sleep(1000);
 
@@ -70,6 +74,7 @@ public class UsuarioServlet extends HttpServlet {
                     clienteAux.setNombre(request.getParameter("nombre"));
                     clienteAux.setApellidos(request.getParameter("apellidos"));
                     clienteAux.setNacionalidad(request.getParameter("nacionalidad"));
+                    tel.setCelular(request.getParameter("celular"));
                     user.setTipo(0);
                     user.setEstado(0);
                     user.setFechaCreacion(new Date());
@@ -83,6 +88,9 @@ public class UsuarioServlet extends HttpServlet {
                             if (list.size() > 0) {
                                 out.print("E~El correo ya esta registrado");
                             } else {
+                                telbl.save(tel);
+                                List<Telefonos> listTel= telbl.findByQuery("FROM Telefonos where celular='"+tel.getCelular()+"'");
+                                clienteAux.setTelefonos(listTel.get(0));
                                 ubl.save(user);
                                 Usuario cursor = ubl.findByNombreUsuario(request.getParameter("usuario"));
                                 clienteAux.setUsuario(cursor);
@@ -103,34 +111,28 @@ public class UsuarioServlet extends HttpServlet {
                         String sha512 = request.getParameter("sha512pass");
                         if (lista.get(0).getPasswordSha512().equals(sha512)) {
                             String hash = lista.get(0).getPasswordBcrypt();
-                            if (BCrypt.checkpw(sha512, hash)) {
-                                Usuario userAux = lista.get(0);
+                            Usuario userAux = lista.get(0);
+                            if (userAux.getEstado() == 1) {
+                                if (BCrypt.checkpw(sha512, hash)) {
+
+                                    request.getSession(true);
+                                    session.setAttribute("usuario", userAux.getUsuario());
+                                    session.setAttribute("tipo", userAux.getTipo());
+                                    out.print("C~ Correcto");
+                                } else {
+                                    out.print("E~Usuario o contraseña incorrectos");
+                                }
+
                             } else {
-                                out.print("E~Usuario o contraseña incorrectos");
+                                out.print("E~La cuenta no ha sido activada");
                             }
-
-                            request.getSession(true);
-
-                            session.setAttribute("usuario", null);
-                            session.setAttribute("loginStatus", "login");
-                            session.setAttribute("tipo", " ");
-                            out.print("C~ Correcto");
                         } else {
-                            out.print("F~ error, el usuario o clave no existe");
+                            out.print("E~ error, el usuario o clave no existe");
                         }
                     } else {
-                        out.print("F~ error, el usuario no existe");
+                        out.print("E~ error, el usuario o clave no existe");
                     }
 
-                    break;
-                case "testPassword":
-                    String sha512 = request.getParameter("sha512pass");
-                    String hash = request.getParameter("hash");
-                    if (BCrypt.checkpw(sha512, hash)) {
-                        System.out.println("It matches");
-                    } else {
-                        System.out.println("It does not match");
-                    }
                     break;
                 default:
                     out.print("E~No se indico la acción que se desea realizare");
